@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> APOGEE </title>
+        </head>
+        <body> 
+            <div>
+                <h1 class="topnav-middle" align="Middle"> WELCOME </h1>
+                
+            </div>
+            <div style="text-align: center">
+          <div>
+              <form>
+  <label for="event's name">Event's name:</label>
+  <input type="text" id="event" name="Event name" value="" required><br>
+</form>
+</div>
+&nbsp; 
+<div>
+    <form>
+        <label for="Name">Name:</label>
+        <input type="text" id="name" name="name" value="" required><br>
+    </form>
+</div>
+&nbsp;  
+<div>
+<form>
+  <label for="Department organizing that event">Department organizing that event:</label>
+ <select name="Devent" id="devent">
+     <option value=""></option>
+  <option value="">ACM</option>
+  <option value="">DVM</option>
+  <option value="">Coding club</option>
+  <option value="">CEL</option>
+</select>
+</form>
+</div>
+&nbsp;
+<div>
+<form>
+    <label for="BITS ID">BITS ID:</label>
+    <input type="text" id="bitsid" placeholder="20XXAAAAZZZZP" required>
+   </form>
+   </div>
+   &nbsp;
+   <div>
+   <form>
+    <level for="mobile no.">Mobile no.</level>
+    <input type="text" id="mobile" placeholder="XXXXXXXXXX" pattern="[0-9]{10}" required>
+   </form>
+   </div>
+   &nbsp;
+   <div>
+   <form>
+    <level for="Event date">Event date:</level>
+  <input type="date" id="edate"  name="Event date">
+     </form>
+   </div>
+   &nbsp;
+  <div>
+    <form>
+        <level for="Event starting time">Event- starting time</level>
+        <input type="time" id="starting time" name="starting time">
+    
+    
+        <level for="Ending time">Ending time</level>
+        <input type="time" id="ending time" name="ending time">
+    </form>
+ </div>
+            &nbsp;
+            <div>
+            <button type="submit" value="Submit" onclick="fn()"> Submit </button>
+                
+                <p id="ans1"></p>
+                <p id="ans2"></p>
+                <p id="ans3" style="text-align: center"><b> </b></p>
+            </div>
+            </div>
+
+<script>
+    function fn()
+    {
+        var x = document.getElementById("mobile");
+        var y = x.value;
+        var idbits = document.getElementById("bitsid");
+        var z = idbits.value;
+        let num=0;
+        var output1;
+        var output2;
+        var output3;
+        if( y.length!=10)
+            {
+                output1 = "Contact not valid";
+                document.getElementById("ans1").innerHTML = output1;
+                num++;
+            }
+        if( z.length!=13)
+            {
+                output2 = "Enter correct BITS ID";
+                document.getElementById("ans2").innerHTML = output2;
+                num++;
+            }
+        if(num==0)
+            {
+                var eventname = document.getElementById("event").value;
+                var name = document.getElementById("name").value;
+                var eventdep = document.getElementById("devent").value;
+                var date = document.getElementById("edate").value;
+                
+                var result = " Event name : " + eventname + "<br/>" + 
+                    " Name : " + name + "<br/>" +
+                    " Department organizing : " + eventdep + "<br/>" +
+                    " BITS ID : " + z + "<br/>" +
+                    " Mobile No : " + y + "<br/>" +
+                    " Date : " + date + "<br/>" ;
+                
+                document.getElementById("ans3").innerHTML = result;    
+            }
+        
+            
+    
+    }
+            </script>
+
+ </body>
+    
+</html>
